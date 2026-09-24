@@ -1,18 +1,20 @@
 
-import { useState } from "react";
+import type { Dispatch, SetStateAction } from "react";
 import type { StackType } from "../stackType";
 
 interface SelectedStackProps {
     stack: StackType;
+    setStackSelect: Dispatch<SetStateAction<StackType[]>>;
+    stackSelect: StackType[];
+   
 }
 
-const SelectedStack = ({ stack }: SelectedStackProps) => {
-
-    const [isSelected, setSelected]= useState(false);
+const SelectedStack = ({ stack, stackSelect, setStackSelect }: SelectedStackProps) => {
+    const isSelected = stackSelect.some((selectedStack) => selectedStack.id === stack.id);
 
     return (
-        
-        <div className={`card card-border  ${isSelected===true?"bg-gray-300": "bg-base-100"}`}>
+
+        <div className={`card card-border ${isSelected ? "bg-gray-100" : "bg-base-100"}`}>
             <div className="card-body gap-4">
                 <div className="flex justify-between">
                     <div className="flex gap-2 md:flex-col md:items-baseline">
@@ -26,11 +28,19 @@ const SelectedStack = ({ stack }: SelectedStackProps) => {
 
                 <p className="xl:text-[18px]">{stack.description}</p>
                 <div className="card-actions justify-center">
-                    <button  disabled={isSelected==true} onClick={() => setSelected(true)} className="btn btn-neutral w-full rounded-xl">{isSelected===true?"Selected":"Buy"}</button>
+                    <button
+                        onClick={() => setStackSelect([...stackSelect, stack])}
+                        disabled={isSelected}
+                        className="btn btn-neutral w-full rounded-xl"
+                    >
+                        {isSelected ? "Selected" : "Buy"}
+                    </button>
+                   
                 </div>
             </div>
         </div>
-        
+
+
 
     );
 };

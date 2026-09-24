@@ -8,6 +8,7 @@ interface stacksprops{
  
 export default function StackPromise({stackPromise}:stacksprops){
     const allStack = use(stackPromise);
+    
 
     return(
         <div>
