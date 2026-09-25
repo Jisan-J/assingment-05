@@ -23,7 +23,24 @@ const SelectedStack = ({ stack, stackSelect, setStackSelect }: SelectedStackProp
                         <h2 className="card-title">{stack.name}</h2>
                     </div>
                     <div >
-                        <span className="bg-blue-100 rounded-xl text-sky-600 py-1 px-4">{stack.badge}</span>
+                        <span className={
+                            ` ${stack.name === "React"
+                                ? "bg-sky-50 text-sky-600"
+                                : stack.name === "JavaScript"
+                                    ? "bg-yellow-50 text-yellow-600"
+                                    : stack.name === "TypeScript"
+                                        ? "bg-blue-50 text-blue-600"
+                                        : stack.name === "Node.js"
+                                            ? "bg-green-50 text-green-600"
+                                            : stack.name === "MongoDB"
+                                            
+                                            ? "bg-green-50 text-green-600"
+                                            : stack.name === "Express.js"
+                                            ? "bg-gray-50 text-black-600": stack.name==="Next.js"?"bg-purple-50 text-purple-600": stack.name==="Git"?"bg-orange-50 text-orange-600":
+                                            "bg-sky-50 text-sky-600"
+                            
+                            } rounded-xl py-1 px-4`
+                        }>{stack.badge}</span>
                     </div>
                 </div>
 
@@ -32,7 +49,7 @@ const SelectedStack = ({ stack, stackSelect, setStackSelect }: SelectedStackProp
                     <p className="bg-gray-100 text-[12px] xl:text-[16px] bg-contain py-1 rounded-md text-center">{stack.category}</p>
                     <p className="text-[12px]  xl:text-[16px]">{stack.difficulty}</p>
                     <div className="flex items-center gap-2">
-                       <span className="text-yellow-300"><FaStar /></span> 
+                        <span className="text-yellow-300"><FaStar /></span>
                         <p className="text-[12px] xl:text-[16px]">{stack.rating}</p></div>
                 </div>
                 <div className="card-actions justify-center">

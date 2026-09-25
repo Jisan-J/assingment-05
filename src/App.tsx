@@ -4,7 +4,7 @@ import './App.css'
 import Nav from './component/Nav'
 import StackPromise from './component/StackPromiseUse'
 import type { StackType } from "./stackType";
-import HeroSection from './HeroSection';
+import HeroSection from './component/HeroSection';
 import Footer from './component/Footer';
 const stackPromise = async (): Promise<StackType[]> => {
   const res = await fetch('/stackApi.json');
