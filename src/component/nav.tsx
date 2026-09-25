@@ -4,9 +4,9 @@ export default function Nav() {
     return (
         <>
 
-            <nav className=' flex justify-between container mx-auto items-center h-14 md:h-16 '>
-                <img className='h-4 md:hidden' src={humberger} alt="" />
-                <img className='h-5 md:h-10' src={logo} alt="" />
+            <nav className=' flex justify-between container mx-auto items-center h-14 md:h-16 px-10'>
+                <img className='h-2 md:hidden' src={humberger} alt="" />
+                <img className='h-5 md:h-5 lg:h-10' src={logo} alt="" />
                 <ul className='hidden md:flex gap-2 md:gap-4'>
                     <li><a href="#">Home</a></li>
                     <li><a href="#">Technologies</a></li>
