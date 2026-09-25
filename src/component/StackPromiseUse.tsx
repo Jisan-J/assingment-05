@@ -1,6 +1,6 @@
 import { use } from "react";
 import type { StackType } from "../stackType";
-import AllStack from "./allStack";
+import AllStack from "./StackMain";
 
 interface stacksprops{
     stackPromise: Promise<StackType[]>

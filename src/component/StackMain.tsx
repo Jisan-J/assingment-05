@@ -1,6 +1,6 @@
 import { useState } from "react";
 import type { StackType } from "../stackType";
-import SelectedStack from "./SelectedStack";
+import SelectedStack from "./StackMainList";
 import CartStack from "./CartStack";
 
 

@@ -1,8 +1,8 @@
 
 import { Suspense } from 'react';
 import './App.css'
-import Nav from './component/nav'
-import StackPromise from './component/stack'
+import Nav from './component/Nav'
+import StackPromise from './component/StackPromiseUse'
 import type { StackType } from "./stackType";
 import HeroSection from './HeroSection';
 import Footer from './component/Footer';

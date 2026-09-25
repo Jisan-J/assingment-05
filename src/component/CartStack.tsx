@@ -7,7 +7,6 @@ interface CartStackProps {
 }
 
 const CartStack = ({ cartStack, handleRemoveStack }: CartStackProps) => {
-
    
     return (
 
@@ -19,13 +18,6 @@ const CartStack = ({ cartStack, handleRemoveStack }: CartStackProps) => {
 
         </div>
 
-
-
-
-        /*  <div className="flex gap-2 md:flex-col md:items-baseline">
-                         <img className="h-6 md:h-8" src={stackSelect.name} alt="" />
-                         <h2 className="card-title">{stackSelect.name}</h2>
-                     </div> */
     )
 };
 
