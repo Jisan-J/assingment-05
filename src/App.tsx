@@ -6,6 +6,7 @@ import StackPromise from './component/StackPromiseUse'
 import type { StackType } from "./stackType";
 import HeroSection from './component/HeroSection';
 import Footer from './component/Footer';
+import { Toaster } from "react-hot-toast";
 const stackPromise = async (): Promise<StackType[]> => {
   const res = await fetch('/stackApi.json');
   const data = await res.json();
@@ -17,7 +18,9 @@ function App() {
     <>
       <Nav></Nav>
       <HeroSection></HeroSection>
+      <Toaster position="top-right" />
       <Suspense fallback={<div>Loading</div>}>
+    
       <StackPromise stackPromise={stackPromise()}></StackPromise>
       </Suspense>
       <Footer></Footer>

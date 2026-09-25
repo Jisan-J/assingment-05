@@ -2,6 +2,7 @@
 import type { Dispatch, SetStateAction } from "react";
 import type { StackType } from "../stackType";
 import { FaStar } from "react-icons/fa";
+import toast from "react-hot-toast";
 
 interface SelectedStackProps {
     stack: StackType;
@@ -54,7 +55,10 @@ const SelectedStack = ({ stack, stackSelect, setStackSelect }: SelectedStackProp
                 </div>
                 <div className="card-actions justify-center">
                     <button
-                        onClick={() => setStackSelect([...stackSelect, stack])}
+                        onClick={() => {
+                            setStackSelect([...stackSelect, stack]);
+                            toast.success(`${stack.name} added to your stack`);
+                        }}
                         disabled={isSelected}
                         className="btn btn-neutral w-full rounded-xl"
                     >
