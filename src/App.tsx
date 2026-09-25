@@ -5,6 +5,7 @@ import Nav from './component/nav'
 import StackPromise from './component/stack'
 import type { StackType } from "./stackType";
 import HeroSection from './HeroSection';
+import Footer from './component/Footer';
 const stackPromise = async (): Promise<StackType[]> => {
   const res = await fetch('/stackApi.json');
   const data = await res.json();
@@ -19,6 +20,7 @@ function App() {
       <Suspense fallback={<div>Loading</div>}>
       <StackPromise stackPromise={stackPromise()}></StackPromise>
       </Suspense>
+      <Footer></Footer>
      
     </>
   )
