@@ -4,7 +4,7 @@ export default function Nav() {
     return (
         <>
 
-            <nav className=' flex justify-between container mx-auto items-center h-14 md:h-16 px-10'>
+            <nav className='sticky top-0 z-50 flex justify-between container mx-auto items-center h-14 md:h-16 px-10 bg-white'>
                 <img className='h-2 md:hidden' src={humberger} alt="" />
                 <img className='h-5 md:h-5 lg:h-10' src={logo} alt="" />
                 <ul className='hidden md:flex gap-2 md:gap-4'>
