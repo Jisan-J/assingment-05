@@ -15,7 +15,7 @@ export default function AllStack({ allStack }: AllStackProps) {
         setStackSelect(restStack)
     }
     return (
-        <div className="lg:flex justify-between container w-full mx-auto">
+        <div className="lg:flex gap-2 justify-between container w-full mx-auto">
             <div className="md:grid grid-cols-3 gap-2">
                 {
                     allStack.map((stack: StackType) => {
@@ -28,7 +28,7 @@ export default function AllStack({ allStack }: AllStackProps) {
                 }
             </div>
             <div>
-                <div className="card mx-auto lg:w-[280px] xl:w-[370px] border-2">
+                <div className="card mx-auto lg:w-[240px] xl:w-[300px] border-gray-200 border-1">
                     <div className="card-body">
                         <h2 className="card-title">Your Stack</h2>
                         <p className="text-gray-400">{stackSelect.length} Technology selected</p>
@@ -43,14 +43,17 @@ export default function AllStack({ allStack }: AllStackProps) {
                                 </ul>
                             )
                         })}
-                        <div className="card-actions justify-center">
+                        <div className={`card-actions justify-center ${stackSelect.length==0?"hidden":"block"}`}>
                             <button onClick={() => {
                                 return (
                                     setStackSelect([])
                                 )
                             }
 
-                            } className="btn w-full">Remove All</button>
+                            } className="btn w-full text-red-400">Remove All</button>
+                        </div>
+                        <div className={ `border-1 border-gray-200 p-5 text-center text-gray-400 ${stackSelect.length>0?"hidden":"block"}`}>
+                            <p>Your stack is empty</p>
                         </div>
                     </div>
                 </div>
